@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Details</title>
+  <link rel="stylesheet" href="./order.css">
+</head>
+<body>
+  <div id="order-details">
+    <h1>Order Details</h1>
+        <!-- Display the Order Summary -->
+    <h2>Your Order</h2>
+    <table id="order-summary">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filled by JavaScript -->
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Total</td>
+          <td id="summary-total-price">0</td>
+        </tr>
+      </tfoot>
+    </table>
+    <!-- Personal and Payment Details -->
+    <h2>Enter Your Details</h2>
+    <form id="order-form">
+      <div>
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" name="full-name" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="address">Delivery Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+      </div>
+      <div>
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method" name="payment-method" required>
+          <option value="" disabled selected>Select a payment method</option>
+          <option value="credit-card">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="cash-on-delivery">Cash on Delivery</option>
+        </select>
+      </div>
+      <!-- Pay Button -->
+      <button type="button" id="pay-button">Pay</button>
+    </form>
+  </div>
+  <!-- Order Form Section -->
+  <section class="form-section">
+    <div class="form">
+        <div class="form-container">
+          <h2>Buy Medicine from Medix-Care Pharmacy</h2>
+          <form
+            action="/submit_pharmacy_order"
+            method="post"
+            enctype="multipart/form-data"
+          >
+          <div><h3>Enter your Details </h3></div>
+            <div class="form-group">
+              <label for="fullName">Full Name:</label>
+              <input type="text" id="fullName" name="fullName" required />
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth:</label>
+              <input type="date" id="dob" name="dob" required />
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+              <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div><h3>Prescription Details</h3></div>
+            <div class="form-group">
+              <label for="prescription-image"
+                >Add your doctor prescription image:</label
+              >
+              <input
+                type="file"
+                id="prescription-image"
+                name="prescription-image"
+                accept="image/*"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="prescriptionNumber"
+                >Prescription Number (if applicable):</label
+              >
+              <input
+                type="text"
+                id="prescriptionNumber"
+                name="prescriptionNumber"
+              />
+            </div>
+            <div><h3>Select the medicine you want with a sale</h3></div>
+
+            <div class="form-group">
+              <label for="select-category">Select Medicine Category:</label>
+              <select
+                id="select-category"
+                name="medicine"
+                required
+                onchange="showMedicines()"
+              >
+                <option value="">Select</option>
+                <option value="prescription">Prescription Medications</option>
+                <option value="vitamins">Vitamins & Supplements</option>
+                <option value="cold-flu">Cold, Cough, & Flu</option>
+                <option value="first-aid">First Aid & Wound Care</option>
+                <option value="digestive">Digestive Health</option>
+                <option value="allergy">Allergy & Sinus Relief</option>
+              </select>
+            </div>
+
+            <!-- Medicine Categories -->
+            <div id="prescription" class="medicine-category hidden">
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/50.jpg" alt="Lipitor" />
+                <h4>Lipitor</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/51.png" alt="Amoxil" />
+                <h4>Amoxil</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/52.jpg" alt="Metformin" />
+                <h4>Metformin</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+            </div>
+
+            <div id="vitamins" class="medicine-category hidden">
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/53.jpg" alt="Vitamin D3" />
+                <h4>Vitamin D3</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/54.jpg" alt="Centrum" />
+                <h4>Centrum Multivitamins</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+            </div>
+
+            <div id="cold-flu" class="medicine-category hidden">
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/55.jpg" alt="Mucinex DM" />
+                <h4>Mucinex DM</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/56.jpeg" alt="Theraflu" />
+                <h4>Theraflu ExpressMax</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+            </div>
+
+            <div id="allergy" class="medicine-category hidden">
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/57.jpg" alt="Zyrtec" />
+                <h4>Zyrtec</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/65.png" alt="Allegra Allergy" />
+                <h4>Allegra Allergy</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/64.webp" alt="Flonase" />
+                <h4>Flonase Nasal Spray</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+            </div>
+
+            <div id="digestive" class="medicine-category hidden">
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/63.webp" alt="Pepto-Bismol" />
+                <h4>Pepto-Bismol</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/62.jpg" alt="Prilosec OTC" />
+                <h4>Prilosec OTC</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/61.jpg" alt="Tums Chewables" />
+                <h4>Tums Chewables</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+            </div>
+
+            <div id="first-aid" class="medicine-category hidden">
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/60.png" alt="Neosporin" />
+                <h4>Neosporin</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/59.jpeg" alt="Band-Aid Variety Pack" />
+                <h4>Band-Aid Variety Pack</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+              <div class="medicine-card">
+                <div class="sale-label">Sale</div>
+                <img src="./img/58.jpg" alt="Hydrocortisone Cream" />
+                <h4>Hydrocortisone Cream</h4>
+                <button type="button" id="button">Add to Cart</button>
+              </div>
+            </div>
+            <!-- End of Medicine Categories -->
+
+            <div class="form-group">
+              <label for="quantity-days"
+                >How many days do you need the medicine for?</label
+              >
+              <input
+                type="number"
+                id="quantity-days"
+                name="quantity-days"
+                min="1"
+                max="365"
+                required
+              />
+            </div>
+            <div><h3>Delivery Details</h3></div>
+           <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea
+              id="address"
+              name="address"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          
+            <div class="form-group">
+              <label for="deliveryOption">Delivery Option:</label>
+              <select id="deliveryOption" name="deliveryOption" required>
+                <option value="">Select</option>
+                <option value="delivery">Delivery</option>
+                <option value="pickup">Pick-up</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="additionalInfo">Additional Information:</label>
+              <textarea
+                id="additionalInfo"
+                name="additionalInfo"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Submit Order" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="./order.js"></script>
+</body>
+</html>

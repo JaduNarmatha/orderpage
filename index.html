@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharmacy Website</title>
+
+    <!-- Favicon Links -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#111010" />
+    <meta name="msapplication-TileColor" content="#00aba9" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./pharmacy.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.5.1/uicons-brands/css/uicons-brands.css"
+    />
+  </head>
+
+
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="contact-info">
+        <span>📞 0123456789</span>
+        <span>📍 Kandy, Sri Lanka</span>
+        <span>✉ medixcare@gmail.com</span>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fi fi-brands-instagram"></i></a>
+        <a href="#"><i class="fi fi-brands-twitter-alt"></i></a>
+        <a href="#"><i class="fi fi-brands-twitter"></i></a>
+        <a href="#"><i class="fi fi-brands-linkedin"></i></a>
+      </div>
+    </header>
+<main>
+    <!-- Main Navigation ,styles in main.css-->
+    <nav class="main-nav">
+      <div class="logo">
+        <a href="./index.html"
+          ><img src="./img/logo.jpg" alt="Hospital Logo"
+        /></a>
+      </div>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">☰ Menu</label>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="./index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="./about.html" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a href="./services.html" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item">
+          <a href="./contactus.html" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a href="./doctors.html" class="nav-link">Doctors</a>
+        </li>
+        <li class="nav-item">
+          <a href="./Reservstions.html" class="nav-link"
+            >Consulting Reservation</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="./pharmacy.html" class="nav-link active">order</a>
+        </li>
+        <li class="nav-item">
+          <a href="./careers.html" class="nav-link">Careers</a>
+        </li>
+      </ul>
+      <a href="./Reservstions.html" class="appointment-button">APPOINTMENT</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="overlay-hero">
+        <h1>ORDER PAGE</h1>
+        <nav class="breadcrumb">
+          <a href="./index.html">Home</a> &bull;
+          <a href="./pharmacy.html">order</a>
+        </nav>
+      </div>
+    </section>
+    </main>
+<body>
+    <!-- Landing Section -->
+    <section class="landing">
+      <div class="landing-content">
+        <h1 >Welcome to Our Pharmacy</h1>
+        <p >Your one-stop shop for all health needs.</p>
+        <a href="./pharmacy.html" class="btn-primary">Shop Now</a>
+      </div>
+    </section>
+<br>
+<br>
+<br>
+  <!-- Features Section -->
+<section class="features">
+  <div class="feature">
+    <h3>Free Prescription Delivery</h3>
+    <p>Get your medications delivered to your doorstep with no additional cost. We offer free, reliable, and timely delivery services to ensure you never miss a dose.</p>
+  </div>
+  <div class="feature">
+    <h3>Exclusive Discounts on Health Products</h3>
+    <p>Enjoy up to 50% off on selected health products and supplements during our seasonal sales. Stock up on essential healthcare items and wellness products at unbeatable prices.</p>
+  </div>
+  <div class="feature">
+    <h3>24/7 Pharmacist Support</h3>
+    <p>Need assistance or have questions about your medications? Our licensed pharmacists are available 24/7 to provide expert advice and support, ensuring your health and safety.</p>
+  </div>
+</section>
+
+  <h1>Medicine Store</h1>
+
+ <!-- Analgesics Section -->
+<section>
+   <input type="checkbox" id="toggle-antihistamines" hidden>
+  <label for="toggle-antihistamines" class="toggle-label">Analgesics</label>
+  <div class="medicine-grid">
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Paracetamol">
+          <h3>Paracetamol</h3>
+          <p>$5.00</p>
+          <button class="cart-btn" onclick="addToCart('Paracetamol', 5)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Paracetamol')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Ibuprofen">
+          <h3>Ibuprofen</h3>
+          <p>$7.00</p>
+          <button class="cart-btn" onclick="addToCart('Ibuprofen', 7)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Ibuprofen')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Aspirin">
+          <h3>Aspirin</h3>
+          <p>$6.00</p>
+          <button class="cart-btn" onclick="addToCart('Aspirin', 6)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Aspirin')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Naproxen">
+          <h3>Naproxen</h3>
+          <p>$9.00</p>
+          <button class="cart-btn" onclick="addToCart('Naproxen', 9)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Naproxen')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Diclofenac">
+          <h3>Diclofenac</h3>
+          <p>$10.00</p>
+          <button class="cart-btn" onclick="addToCart('Diclofenac', 10)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Diclofenac')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Ketorolac">
+          <h3>Ketorolac</h3>
+          <p>$8.50</p>
+          <button class="cart-btn" onclick="addToCart('Ketorolac', 8.5)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Ketorolac')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Celecoxib">
+          <h3>Celecoxib</h3>
+          <p>$12.00</p>
+          <button class="cart-btn" onclick="addToCart('Celecoxib', 12)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Celecoxib')">Add to Favourites</button>
+      </div>
+  </div>
+</section>
+
+<!-- Antibiotics Section -->
+<section>
+  <input type="checkbox" id="toggle-antihistamines" hidden>
+  <label for="toggle-antihistamines" class="toggle-label">Antibiotics</label>
+  <div class="medicine-grid">
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Amoxicillin">
+          <h3>Amoxicillin</h3>
+          <p>$10.00</p>
+          <button class="cart-btn" onclick="addToCart('Amoxicillin', 10)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Amoxicillin')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Azithromycin">
+          <h3>Azithromycin</h3>
+          <p>$12.00</p>
+          <button class="cart-btn" onclick="addToCart('Azithromycin', 12)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Azithromycin')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Ciprofloxacin">
+          <h3>Ciprofloxacin</h3>
+          <p>$11.00</p>
+          <button class="cart-btn" onclick="addToCart('Ciprofloxacin', 11)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Ciprofloxacin')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Doxycycline">
+          <h3>Doxycycline</h3>
+          <p>$14.00</p>
+          <button class="cart-btn" onclick="addToCart('Doxycycline', 14)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Doxycycline')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Erythromycin">
+          <h3>Erythromycin</h3>
+          <p>$13.00</p>
+          <button class="cart-btn" onclick="addToCart('Erythromycin', 13)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Erythromycin')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Levofloxacin">
+          <h3>Levofloxacin</h3>
+          <p>$15.00</p>
+          <button class="cart-btn" onclick="addToCart('Levofloxacin', 15)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Levofloxacin')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Metronidazole">
+          <h3>Metronidazole</h3>
+          <p>$8.00</p>
+          <button class="cart-btn" onclick="addToCart('Metronidazole', 8)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Metronidazole')">Add to Favourites</button>
+      </div>
+  </div>
+</section>
+
+<!-- Antidepressants Section -->
+<section>  
+  <input type="checkbox" id="toggle-antihistamines" hidden>
+  <label for="toggle-antihistamines" class="toggle-label">Antidepressants</label>
+  <div class="medicine-grid">
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Fluoxetine">
+          <h3>Fluoxetine</h3>
+          <p>$25.00</p>
+          <button class="cart-btn" onclick="addToCart('Fluoxetine', 25)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Fluoxetine')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Sertraline">
+          <h3>Sertraline</h3>
+          <p>$28.00</p>
+          <button class="cart-btn" onclick="addToCart('Sertraline', 28)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Sertraline')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Venlafaxine">
+          <h3>Venlafaxine</h3>
+          <p>$30.00</p>
+          <button class="cart-btn" onclick="addToCart('Venlafaxine', 30)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Venlafaxine')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Citalopram">
+          <h3>Citalopram</h3>
+          <p>$27.00</p>
+          <button class="cart-btn" onclick="addToCart('Citalopram', 27)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Citalopram')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Duloxetine">
+          <h3>Duloxetine</h3>
+          <p>$32.00</p>
+          <button class="cart-btn" onclick="addToCart('Duloxetine', 32)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Duloxetine')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Escitalopram">
+          <h3>Escitalopram</h3>
+          <p>$26.00</p>
+          <button class="cart-btn" onclick="addToCart('Escitalopram', 26)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Escitalopram')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Amitriptyline">
+          <h3>Amitriptyline</h3>
+          <p>$20.00</p>
+          <button class="cart-btn" onclick="addToCart('Amitriptyline', 20)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Amitriptyline')">Add to Favourites</button>
+      </div>
+  </div>
+</section>
+
+
+<!-- Antihistamines Section -->
+<section>
+  <input type="checkbox" id="toggle-antihistamines" hidden>
+  <label for="toggle-antihistamines" class="toggle-label">Antihistamines</label>
+  <div class="medicine-grid">
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Loratadine">
+          <h3>Loratadine</h3>
+          <p>$8.00</p>
+          <button class="cart-btn">Add to Cart</button>
+          <button class="favourites-btn">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Cetirizine">
+          <h3>Cetirizine</h3>
+          <p>$7.00</p>
+          <button class="cart-btn">Add to Cart</button>
+          <button class="favourites-btn">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Diphenhydramine">
+          <h3>Diphenhydramine</h3>
+          <p>$6.50</p>
+          <button class="cart-btn">Add to Cart</button>
+          <button class="favourites-btn">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Fexofenadine">
+          <h3>Fexofenadine</h3>
+          <p>$9.00</p>
+          <button class="cart-btn">Add to Cart</button>
+          <button class="favourites-btn">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Promethazine">
+          <h3>Promethazine</h3>
+          <p>$10.00</p>
+          <button class="cart-btn">Add to Cart</button>
+          <button class="favourites-btn">Add to Favourites</button>
+      </div>
+  </div>
+</section>
+  <!-- Antihypertensives Section -->
+<section>
+  <input type="checkbox" id="toggle-antihypertensives" hidden>
+  <label for="toggle-antihypertensives" class="toggle-label">Antihypertensives</label>
+  <div class="medicine-grid">
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Lisinopril">
+          <h3>Lisinopril</h3>
+          <p>$12.00</p>
+          <button class="cart-btn" onclick="addToCart('Lisinopril', 12)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Lisinopril')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Amlodipine">
+          <h3>Amlodipine</h3>
+          <p>$14.00</p>
+          <button class="cart-btn" onclick="addToCart('Amlodipine', 14)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Amlodipine')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Metoprolol">
+          <h3>Metoprolol</h3>
+          <p>$13.00</p>
+          <button class="cart-btn" onclick="addToCart('Metoprolol', 13)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Metoprolol')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Losartan">
+          <h3>Losartan</h3>
+          <p>$16.00</p>
+          <button class="cart-btn" onclick="addToCart('Losartan', 16)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Losartan')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Hydrochlorothiazide">
+          <h3>Hydrochlorothiazide</h3>
+          <p>$11.00</p>
+          <button class="cart-btn" onclick="addToCart('Hydrochlorothiazide', 11)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Hydrochlorothiazide')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Carvedilol">
+          <h3>Carvedilol</h3>
+          <p>$15.00</p>
+          <button class="cart-btn" onclick="addToCart('Carvedilol', 15)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Carvedilol')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Clonidine">
+          <h3>Clonidine</h3>
+          <p>$10.00</p>
+          <button class="cart-btn" onclick="addToCart('Clonidine', 10)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Clonidine')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Diltiazem">
+          <h3>Diltiazem</h3>
+          <p>$17.00</p>
+          <button class="cart-btn" onclick="addToCart('Diltiazem', 17)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Diltiazem')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Enalapril">
+          <h3>Enalapril</h3>
+          <p>$12.50</p>
+          <button class="cart-btn" onclick="addToCart('Enalapril', 12.5)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Enalapril')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Verapamil">
+          <h3>Verapamil</h3>
+          <p>$18.00</p>
+          <button class="cart-btn" onclick="addToCart('Verapamil', 18)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Verapamil')">Add to Favourites</button>
+      </div>
+      <div class="medicine-card">
+          <img src="https://via.placeholder.com/150" alt="Spironolactone">
+          <h3>Spironolactone</h3>
+          <p>$13.50</p>
+          <button class="cart-btn" onclick="addToCart('Spironolactone', 13.5)">Add to Cart</button>
+          <button class="favourites-btn" onclick="addToFavourites('Spironolactone')">Add to Favourites</button>
+      </div>
+  </div>
+</section>
+
+  <!-- Cart Section -->
+  <section>
+     <!-- Cart Table -->
+<h2>Your Cart</h2>
+<table id="cart-table">
+<thead>
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Subtotal</th>
+  </tr>
+</thead>
+<tbody>    </tbody>
+<tfoot>
+  <tr>
+    <td colspan="3">Total</td>
+    <td id="total-price">0</td>
+  </tr>
+</tfoot>
+</table>
+<!-- Buttons -->
+<div class="buttons">
+<button id="save-favorites">Add to Favorites</button>
+<button id="apply-favorites">Apply Favorites</button>
+<button id="buy-now">Buy Now</button></section>
+
+
+    <!-- Products Section -->
+    <section class="products" id="shop-now">
+      <div class="product">
+        <img src="./img/14.jpg" alt="Health and Wellness" />
+        <h3>Health and Wellness Products</h3>
+        <p>Explore our range of vitamins, supplements, and more.</p>
+        <a href="./pharmacy.html" class="btn-secondary">View All Products</a>
+      </div>
+      <div class="product">
+        <img src="./img/16.jpg" alt="Personal Care" />
+        <h3>Personal Care Products</h3>
+        <p>Shop for daily essentials and grooming items.</p>
+        <a href="./pharmacy.html" class="btn-secondary">View All Products</a>
+      </div>
+      <div class="product">
+        <img src="./img/18.jpg" alt="Medical Supplies" />
+        <h3>Medical Supplies and Equipment</h3>
+        <p>Find home healthcare supplies and medical devices.</p>
+        <a href="./pharmacy.html" class="btn-secondary">View All Products</a>
+      </div>
+      <div class="product">
+        <img src="./img/17.jpg" alt="Vitamins and Supplements" />
+        <h3>Vitamins and Supplements</h3>
+        <p>Browse our selection of daily vitamins and dietary supplements for all your health needs.</p>
+        <a href="./pharmacy.html" class="btn-secondary">View All Products</a>
+      </div>
+    </section>
+    
+
+    
+
+    <!-- Contact Information Section -->
+    <section>
+      <div class="contacts-container">
+        <div class="contacts">
+          <div>
+            <h3>Address</h3>
+            <p>123 Medical Lane, Health City, Country</p>
+          </div>
+        </div>
+        <div class="contacts">
+          <div>
+            <h3>Hotline</h3>
+            <p>012-345-6789</p>
+          </div>
+        </div>
+        <div class="contacts">
+          <div>
+            <h3>Email</h3>
+            <p>MedixCare@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section  class="testimonials">
+      <div class="testimonial">
+        <img src="./img/23.jpg" alt="Rebecca Morando" />
+        <p>
+          "The service was exceptional! I received my medication promptly, and
+          the staff was incredibly helpful throughout the process."
+        </p>
+        <h4>– Rebecca Morando</h4>
+      </div>
+      <div class="testimonial">
+        <img src="./img/22.jpg" alt="Lucas Gallone" />
+        <p>
+          "I appreciate how easy it was to order online, and the customer
+          support team guided me through every step."
+        </p>
+        <h4>– Lucas Gallone</h4>
+      </div>
+      <div class="testimonial">
+        <img src="./img/24.jpg" alt="Andrew Neel" />
+        <p>
+          "Fast delivery and excellent customer care. I’ll definitely be using
+          this pharmacy for all my future needs."
+        </p>
+        <h4>– Andrew Neel</h4>
+      </div>
+      <div class="testimonial">
+        <img src="./img/25.jpg" alt="Nihal Prasad" />
+        <p>
+          "ඉතා හොඳ සේවාවක්! මම මාද්‍ය ලබා ගැනීමට මීට අමතරව කුඩා සහයෝගය ලබා
+          ගැනීමට පවා හැකි විය."
+        </p>
+        <h4>– නිහාල් ප්‍රසාද්</h4>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+          <div class="footer-section">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="./index.html">Home Page</a></li>
+                  <li><a href="./about.html">About Us Page</a></li>
+                  <li><a href="./services.html">Services Page </a></li>
+                  <li><a href="./doctors.html">Doctors Page</a></li>
+                  <li><a href="./contactus.html">Contact Us</a></li>
+                  <li><a href="./pharmacy.html">Order Page</a></li>
+                  <li><a href="./Reservstions.html">Consulting Reservation Page</a></li>
+                  <li><a href="./careers.html">Careers</a></li>
+              </ul>
+          </div>
+          <div class="footer-section">
+              <h3>Contact Us</h3>
+              <p>2/23 Kandy road, Srilanka</p>
+              <p>medixcare@yahoo.com</p>
+              <p>012-3568974</p>
+          </div>
+          <div class="footer-section">
+              <h3>Subcribe Us</h3>
+              <p>Please Subcribe us for More inquiries and Notifications</p>
+              <form>
+                  <input type="email" placeholder="Your Email Address" required>
+                  <button type="submit">Subscribe</button>
+              </form>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy;2024 All rights reserved| <span>♥</span> by Medixcare</p>
+          <div class="footer-social-icons">
+              <a><i class="fi fi-brands-facebook"></i></a>
+              <a><i class="fi fi-brands-instagram"></i></a>
+              <a><i class="fi fi-brands-twitter-alt"></i></a>
+              <a><i class="fi fi-brands-twitter"></i></a>
+              <a><i class="fi fi-brands-linkedin"></i></a>
+          </div>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
