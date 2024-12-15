@@ -1,29 +1,179 @@
+:root {
+  --primary-color: #008080; /* Teal */
+  --secondary-color: #6c757d; /* Gray */
+  --accent-color: #005f5f; /* Light Gray */
+  --hover-color: #00a0a0; /* Lighter Teal for hover */
+  --text-color: #333; /* Dark text color */
+  --background-color: #ffffff; /* White */
+  --font-color: #000000; /* Black text */
+  --heading-color: #333333; /* Darker text for headings */
+  --margin: 10px;
+  --padding: 15px;
+  --border-radius: 10px;
+  --transition-speed: 0.3s;
+  --nav-margin: 20px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: var(--padding);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--heading-color);
+}
+
 form {
-    margin: 20px 0;
-  }  
-  form div {
-    margin-bottom: 15px;
-  }  
-  form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }  
-  form input, form textarea, form select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }  
-  button#pay-button {
-    width: 100%;
-    background-color: #008080;
-    color: white;
-    font-size: 16px;
-    padding: 10px;
-    margin-top: 20px;
-  }  
-  button#pay-button:hover {
-    background-color: #006666;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form label {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+form input, form textarea, form select {
+  width: 100%;
+  padding: var(--padding);
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
+button {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  font-size: 16px;
+  padding: var(--padding);
+  margin-top: var(--margin);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--margin) 0;
+  background-color: var(--background-color);
+  border: 1px solid var(--secondary-color);
+}
+
+th, td {
+  padding: var(--padding);
+  text-align: left;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+th {
+  background-color: var(--primary-color);
+  color: var(--font-color);
+}
+
+tr:nth-child(even) {
+  background-color: var(--accent-color);
+}
+
+#total-price {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--margin) 0;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: var(--padding);
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin);
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input, form select, form button {
+  padding: var(--padding);
+  font-size: 16px;
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--hover-color);
+}
+
+#cart {
+  margin-top: 30px;
+}
+
+#cart table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#cart th, #cart td {
+  padding: var(--padding);
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+#cart th {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+#actions {
+  margin-top: var(--margin);
+}
+
+#actions button {
+  margin-right: var(--margin);
+  padding: var(--padding) 20px;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+#actions button:hover {
+  background-color: var(--hover-color);
+}
